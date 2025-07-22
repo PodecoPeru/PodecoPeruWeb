@@ -471,6 +471,17 @@ nav a:hover, nav a:focus {
     height: 26px;
   }
 }
+@media (max-width: 700px) {
+  .contact-grid {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-form, .contact-info {
+    max-width: 95vw;
+    margin: 0 auto 1.2rem auto;
+  }
+}
 
 /* === Animaciones suaves === */
 [data-aos] {
@@ -576,4 +587,48 @@ nav a:hover, nav a:focus {
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
+} 
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  z-index: 1201;
+}
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+  #main-nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--azul-oscuro);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 5vw 2rem 5vw;
+    box-shadow: 0 8px 32px rgba(31,42,64,0.12);
+    display: none;
+    transition: all 0.3s;
+  }
+  #main-nav.open {
+    display: flex;
+  }
+  #main-nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  #main-nav ul li {
+    width: 100%;
+  }
+  #main-nav ul li a {
+    width: 100%;
+    display: block;
+    padding: 0.7rem 0;
+    font-size: 1.1rem;
+  }
 } 
