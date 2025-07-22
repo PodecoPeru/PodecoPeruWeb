@@ -104,4 +104,19 @@ if (contactForm && formSuccess) {
         formSuccess.textContent = 'Ocurrió un error al enviar el mensaje. Intenta nuevamente.';
       });
   });
+}
+
+// Menú hamburguesa para mobile
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('open');
+  });
+  // Cierra el menú al hacer clic en un enlace
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+    });
+  });
 } 
